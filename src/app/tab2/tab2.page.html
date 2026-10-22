@@ -1,17 +1,47 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Painel de Atendimento
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Painel</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- Card de Resumo do Total -->
+  <ion-card class="ion-padding ion-text-center" color="light">
+    <h2>Total de Senhas Emitidas</h2>
+    <h1 style="font-size: 48px; font-weight: bold; color: #2dd36f;">
+      {{ senhasService.senhasTotal }}
+    </h1>
+  </ion-card>
+
+  <!-- Lista com os contadores por categoria -->
+  <ion-list>
+    <ion-item>
+      <ion-label>Senhas Gerais (G):</ion-label>
+      <ion-badge color="primary" slot="end" style="font-size: 18px; padding: 8px;">
+        {{ senhasService.senhasGeral }}
+      </ion-badge>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Senhas Prioritárias (P):</ion-label>
+      <ion-badge color="warning" slot="end" style="font-size: 18px; padding: 8px;">
+        {{ senhasService.senhasPrior }}
+      </ion-badge>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Senhas de Exames (E):</ion-label>
+      <ion-badge color="tertiary" slot="end" style="font-size: 18px; padding: 8px;">
+        {{ senhasService.senhasExame }}
+      </ion-badge>
+    </ion-item>
+  </ion-list>
 </ion-content>

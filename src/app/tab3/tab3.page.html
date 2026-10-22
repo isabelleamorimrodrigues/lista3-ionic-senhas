@@ -1,17 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Informações / Configurações
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Sobre</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!-- Card com detalhes da aplicação -->
+  <ion-card class="ion-padding">
+    <ion-card-header>
+      <ion-card-title>Sistema de Gestão de Filas</ion-card-title>
+      <ion-card-subtitle>Ionic Framework & Angular</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Esta aplicação foi desenvolvida para gerir a emissão de senhas de atendimento de forma organizada, dividindo o fluxo em três categorias principais:</p>
+      <ul>
+        <li><strong>Geral (G):</strong> Atendimento padrão.</li>
+        <li><strong>Prioritária (P):</strong> Atendimento preferencial.</li>
+        <li><strong>Exames (E):</strong> Fila específica para recolha e exames.</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botão para reiniciar o dia / contadores -->
+  <div style="margin-top: 30px;" class="ion-text-center">
+    <ion-button expand="block" color="danger" (click)="reiniciarAtendimento()" size="medium">
+      Reiniciar Contadores do Dia
+    </ion-button>
+  </div>
 </ion-content>

@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Emissão de Senhas
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Emissão</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Caixa de exibição da última senha gerada -->
+  <ion-card class="ion-padding">
+    <h2>Senha Atual</h2>
+    <h1 style="font-size: 64px; font-weight: bold; color: #3880ff;">{{ senhaAtual }}</h1>
+  </ion-card>
+
+  <!-- Botões para gerar as senhas -->
+  <div style="margin-top: 30px;">
+    <ion-button expand="block" color="primary" (click)="gerarGeral()" size="large">
+      Gerar Senha Geral
+    </ion-button>
+
+    <ion-button expand="block" color="warning" (click)="gerarPrior()" size="large" style="margin-top: 15px;">
+      Gerar Senha Prioritária
+    </ion-button>
+
+    <ion-button expand="block" color="tertiary" (click)="gerarExame()" size="large" style="margin-top: 15px;">
+      Gerar Senha de Exame
+    </ion-button>
+  </div>
 </ion-content>
